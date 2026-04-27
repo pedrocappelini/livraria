@@ -101,7 +101,9 @@ public class LivroController extends HttpServlet {
         String titulo = request.getParameter("titulo");
         String autor = request.getParameter("autor");
         Integer ano = Integer.parseInt(request.getParameter("ano"));
-        Float preco = Float.parseFloat(request.getParameter("preco"));
+
+        String precoString = request.getParameter("preco").replace(",", ".");
+        Float preco = Float.parseFloat(precoString);
 
         Long editoraID = Long.parseLong(request.getParameter("editora"));
         Editora editora = new EditoraDAO().get(editoraID);
@@ -118,7 +120,9 @@ public class LivroController extends HttpServlet {
         String titulo = request.getParameter("titulo");
         String autor = request.getParameter("autor");
         Integer ano = Integer.parseInt(request.getParameter("ano"));
-        Float preco = Float.parseFloat(request.getParameter("preco"));
+
+        String precoString = request.getParameter("preco").replace(",", ".");
+        Float preco = Float.parseFloat(precoString);
 
         Long editoraID = Long.parseLong(request.getParameter("editora"));
         Editora editora = new EditoraDAO().get(editoraID);
